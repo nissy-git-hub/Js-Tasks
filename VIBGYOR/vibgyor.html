@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBGYOR</title>
+    <style>
+        .style-btn {
+            margin: 5px;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+        }
+
+        .style-btn:hover {
+            transform: scale(1.2)
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="h1ele">🌈 VIBGYOR BUTTONS</h2>
+    <div id="div-container"></div>
+</body>
+<script>
+    const container = document.getElementById("div-container");
+    // const h1tag = document.getElementById("h1ele")
+    // container.appendChild(h1tag)
+
+    for (let i = 1; i <= 7; i++) {
+        const btn = document.createElement("button");
+        btn.className = "style-btn";
+
+        let colorName = ""
+        let colorHex = ""
+
+        if (i === 1) {
+            colorName = "Violet"
+            colorHex = "#8F00FF"
+        } else if (i === 2) {
+            colorName = "Indigo"
+            colorHex = "#4B0082"
+        } else if (i === 3) {
+            colorName = "Blue"
+            colorHex = "#0000FF"
+        } else if (i === 4) {
+            colorName = "Green"
+            colorHex = "#00FF00"
+        } else if (i === 5) {
+            colorName = "Yellow"
+            colorHex = "#FFFF00"
+        } else if (i === 6) {
+            colorName = "Orange"
+            colorHex = "#FFA500"
+        } else if (i === 7) {
+            colorName = "Red"
+            colorHex = "#FF0000"
+        }
+
+        btn.textContent = colorName
+        btn.style.backgroundColor = colorHex
+
+        btn.addEventListener("click", () => {
+            document.body.style.backgroundColor = colorHex
+        })
+
+        container.appendChild(btn)
+    }
+</script>
+
+</html>
